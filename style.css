@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(83, 177, 240, 0.801),
+    black
+  );
+}
+.img_gen {
+  margin-top: 20px;
+  height: 150px;
+  width: 270px;
+  background-size: cover;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  transition: 0.7s ease-in;
+  position: relative;
+}
+body :nth-child(1) {
+  background-image: url(./img/architecture.jpg);
+}
+body :nth-child(2) {
+  background-image: url(./img/escalator.jpg);
+}
+body :nth-child(3) {
+  background-image: url(./img/galaxy-soho.jpg);
+}
+
+body .img_gen::before {
+  content: "";
+  height: inherit;
+  width: inherit;
+  background: inherit;
+  position: absolute;
+  bottom: -100%;
+  transform: rotateX(180deg);
+}
+body .img_gen::after {
+  content: "";
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  bottom: -100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.493),
+    rgb(0, 0, 0)
+  );
+}
+.img_gen:hover {
+  transform: scale(1.3, 1.3);
+  z-index: 100;
+}
